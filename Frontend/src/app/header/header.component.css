@@ -1,0 +1,24 @@
+a{
+    margin-left: 5px;
+    color: white;
+    padding-right: 3%;
+    
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+               
+}
+.nav1{
+    background: orangered;
+    color: white;
+    opacity: 0.6;
+} 
+
+
+/* * Template Name: Folio - v2.2.1
+* Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/ */
+
+

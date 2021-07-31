@@ -1,0 +1,72 @@
+
+<div class="signup-form">
+    <form action="/examples/actions/confirmation.php" (ngSubmit)="signupUser()" #userSignup="ngForm">
+		<h2>Register</h2>
+		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+			<div class="row">
+				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="Full Name" required="required" [(ngModel)]="user.username"></div>
+
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input type="email" class="form-control" #email="ngModel" name="email" placeholder="Email"  [(ngModel)]="user.email"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
+            <!-- Email Error Display Starts -->
+            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="smal">
+
+            <div *ngIf="email.errors.required">
+            Email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+            Not a valid Format.
+            </div>
+           </div>
+           <!-- Email Error Display Ends -->
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" #password="ngModel" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,}$" [(ngModel)]="user.password" required minlength="8">
+            <!-- Password Error Display Starts -->
+            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="smal">
+
+            <div *ngIf="password.errors.required">
+            Password is required.
+            </div>
+  
+                <div *ngIf="password.errors.pattern||password.errors.minlength">
+                    Minimum 8 length, 1 uppercase, 1 lowercase, 1 number & 1 special character.
+                    </div>
+           
+            
+        
+        </div>
+<br>
+		<div class="form-group">
+                          <input id="MobNo" type="number" class="form-control" placeholder="Your Mobile No." 
+                          [(ngModel)]="user.mobileno" #mobileno="ngModel" name="mobileno"
+                          required minlength="10" pattern="([0-9]{10})">
+                          <!-- Mobile No Error Display Starts -->
+                          <div *ngIf="mobileno.invalid && (mobileno.dirty || mobileno.touched)"
+                          class="smal">
+
+                          <div *ngIf="mobileno.errors.required">
+                          Mobile No. is required.
+                          </div>
+                          <div *ngIf="mobileno.errors.minlength||mobileno.errors.pattern">
+                          Mobile No. must be of 10 digits.
+                          </div>
+                          
+                         </div>
+                         <!-- Mobile No Error Display Ends -->
+                        </div>
+                    </div>
+              
+            <div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit"[disabled]="userSignup.form.invalid" class="btn btn-success btn-lg btn-block" >Register Now</button>
+        </div>
+    </form>
+</div>
