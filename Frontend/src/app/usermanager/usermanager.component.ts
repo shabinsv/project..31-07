@@ -63,7 +63,7 @@ export class UsermanagerComponent implements OnInit {
       ) {
         swalWithBootstrapButtons.fire(
           'Cancelled',
-          'Your imaginary file is safe :)',
+          ':)',
           'error'
         )
       }

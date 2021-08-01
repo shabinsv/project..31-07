@@ -442,6 +442,13 @@ app.delete("/deleteuser/:id",(req,res)=>{
   });
 });
 
+app.get("/getmessage",function(req,res){
+  Contactdata.find()
+   .then(function(users){
+     res.send(users);
+   });
+ });
+
 
 
 app.listen(port,function(){

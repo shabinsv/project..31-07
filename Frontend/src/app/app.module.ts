@@ -48,8 +48,7 @@ import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { UsermanagerComponent } from './usermanager/usermanager.component';
 import { MatListModule} from '@angular/material/list';
 import { MatMenuModule} from '@angular/material/menu';
-import { RatingModule } from 'ng-starrating';
-import { StarRatingModule } from 'angular-star-rating';
+
 
 
 @NgModule({
@@ -98,9 +97,7 @@ import { StarRatingModule } from 'angular-star-rating';
     MatDividerModule,
     WebcamModule,
     MatListModule,
-    MatMenuModule,
-    RatingModule,
-    StarRatingModule.forRoot()
+    MatMenuModule
   ],
   providers: [UserService,TemplateService,FormService,AuthService,{
     provide: HTTP_INTERCEPTORS,
