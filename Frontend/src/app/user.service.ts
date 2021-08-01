@@ -48,4 +48,8 @@ export class UserService {
     return this.http.put("http://localhost:3000/user/rate",star)
     .subscribe(data =>{console.log(data)});
   }
+
+  deleteuser(id:any){
+    return this.http.delete("http://localhost:3000/deleteuser/"+id);
+  }
 }

@@ -432,7 +432,15 @@ app.put('/user/rate',(req,res)=>{
                             });
                           });
 
-
+app.delete("/deleteuser/:id",(req,res)=>{
+   
+  id = req.params.id;
+  Userdata.findByIdAndDelete({"_id":id})
+  .then(()=>{
+      console.log('success')
+      res.send({data:"Deleted ResumeData From Server"});
+  });
+});
 
 
 

@@ -1,3 +1,4 @@
+
 <div class="container-fluid page">
     <div class="d-flex page__box p-3 mt-2">Manage All Users</div>
     <div class="page__content shadow p-3 position-relative">
@@ -10,7 +11,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Rating</th>
-                <th scope="col">Perform</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -20,8 +21,10 @@
                 <td>{{i.username}}</td>
                 <td>{{i.email}}</td>
                 <td>{{i.phonenumber}}</td>
-                <td>{{i.phonenumber}}</td>
-                <td>{{i._id}}</td>
+                <td>{{i.star}}</td>
+                <td>
+                  <button type="button" class="btn btn-outline-danger" (click)="delete(i)">Delete</button>
+                </td>
               </tr>
               
               
