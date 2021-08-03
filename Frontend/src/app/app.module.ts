@@ -48,6 +48,10 @@ import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
 import { UsermanagerComponent } from './usermanager/usermanager.component';
 import { MatListModule} from '@angular/material/list';
 import { MatMenuModule} from '@angular/material/menu';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsersidenavComponent } from './usersidenav/usersidenav.component';
+import { UserheaderComponent } from './userheader/userheader.component';
+import { UserhomeComponent } from './userhome/userhome.component';
 
 
 
@@ -82,7 +86,10 @@ import { MatMenuModule} from '@angular/material/menu';
     MailboxComponent,
     ResumemangerComponent,
     AdminSidenavComponent,
-    UsermanagerComponent
+    UsermanagerComponent,
+    UsersidenavComponent,
+    UserheaderComponent,
+    UserhomeComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,8 @@ import { MatMenuModule} from '@angular/material/menu';
     MatDividerModule,
     WebcamModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    NgbModule
   ],
   providers: [UserService,TemplateService,FormService,AuthService,{
     provide: HTTP_INTERCEPTORS,

@@ -26,6 +26,7 @@ import { Updateform2Component } from './updateform2/updateform2.component';
 import { Updateform3Component } from './updateform3/updateform3.component';
 import { Updateform4Component } from './updateform4/updateform4.component';
 import { UserComponent } from './user/user.component';
+import { UserhomeComponent } from './userhome/userhome.component';
 import { UsermanagerComponent } from './usermanager/usermanager.component';
 
 
@@ -45,7 +46,9 @@ children:[{path:'',component:AdminHomeComponent},
 {path:'contactus',component:ContactusComponent},
 {path:'blogs',component:BlogComponent},
 {path:'user',canActivate:[AuthGuard],component:UserComponent,
-children:[{path:'',component:SelectionComponent},
+children:[{path:'',component:UserhomeComponent},
+{path:'userhome',component:UserhomeComponent},
+{path:'select-template',component:SelectionComponent},
   {path:'form1',component:Form1Component},
 {path:'form2',component:Form2Component},
 {path:'form3',component:Form3Component},

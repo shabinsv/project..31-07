@@ -272,8 +272,11 @@ app.delete("/deletedata/:id",verifyToken,(req,res)=>{
 });
 
 app.get("/getlink/:id/:cvid",verifyToken,function(req,res){
-  const id = req.params.id; 
-  const cvid = req.params.cvid;
+  console.log("ss");
+  var id = req.params.id; 
+  var cvid = req.params.cvid;
+  console.log(id);
+  console.log(cvid);
  Userdata.findById({"_id":id})
   .then((data)=>{
        var link=`http://localhost:4200/template1/${cvid}`
@@ -447,6 +450,31 @@ app.get("/getmessage",function(req,res){
    .then(function(users){
      res.send(users);
    });
+ });
+
+ app.post("/messageback",function(req,res){
+
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+           user: 'mailfromResumeBuilder@gmail.com',
+           pass: 'xeknaduiwqpnudgm'
+       }
+   });
+
+   const mailOptions = {
+    from: 'mailfromResumeBuilder@gmail.com', 
+    to: req.body.email, 
+    subject: 'sending mail', 
+    text: req.body.mess
+  };
+
+  transporter.sendMail(mailOptions, function (err, info) {
+    if(err)
+      console.log(err)
+    else
+      console.log(info);
+ });
  });
 
 

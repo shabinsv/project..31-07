@@ -21,7 +21,12 @@ export class Updateform3Component implements OnInit {
     this.http.Updatedata.job.push({jobname:"", companyname:"", jobyear:"",jobdes:""});
   }
   del(i){
-    this.http.Updatedata.job.splice(i, 1); 
+    
+    const index: number = this.http.Updatedata.job.indexOf(i);
+    if (index !== -1) {
+        this.http.Updatedata.job.splice(index, 1);
+    }    
+     
   }
 
 }

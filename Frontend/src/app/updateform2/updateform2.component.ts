@@ -20,7 +20,13 @@ export class Updateform2Component implements OnInit {
     this.http.Updatedata.education.push({degree:"",specialisation:"",year: "",name:""});
   }
   del(i){
-    this.http.Updatedata.education.splice(i, 1); 
+    const index: number = this.http.Updatedata.education.indexOf(i);
+    if (index !== -1) {
+        this.http.Updatedata.education.splice(index, 1);
+    }    
+     
   }
+   
+  
 
 }

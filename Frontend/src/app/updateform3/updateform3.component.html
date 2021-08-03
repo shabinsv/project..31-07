@@ -1,77 +1,51 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <div class="container">
-	<div class="row">
-	<form class="form-horizontal" (ngSubmit)="updatedata3()">
-<fieldset>
+  <div class="title">Work Experience</div>
+  <br>
+  <div class="content">
+    <form action="#" (ngSubmit)="updatedata3()">
+      
+      <div *ngFor="let i of http.Updatedata.job;let j=index">
+        <div class="user-details">
+                             
+           
+           <div class="input-box">
+            <span class="details">Job Name</span>
+            <input type="text"  placeholder="Enter your job name" name="job{{j}}"  [(ngModel)]="i.jobname" required>
+          </div>
 
-<!-- Form Name -->
-<legend>Work Experience</legend>
+          <div class="input-box">
+            <span class="details">Experience in years</span>
+            <input type="number"  placeholder="Enter your Experience Year" name="jobyear{{j}}"  [(ngModel)]="i.jobyear" required>
+          </div>
 
-<!-- Text input-->
-<div *ngFor="let i of http.Updatedata.job;let j=index">
-<div class="control-group">
-  <label class="control-label" for="full_name">Job <Title></Title></label>
-  <div class="controls">
-    <input id="job" placeholder="Enter your Job Title" class="input-xlarge" type="text" name="job{{j}}"  [(ngModel)]="i.jobname">
-    
-  </div>
-</div>
+          <div class="input-box">
+            <span class="details">Organisation  Name</span>
+            <input type="text" placeholder="Enter your Institution" name="name{{j}}"  [(ngModel)]="i.companyname" required>
+          </div>
+        
+        <div class="input-box">
+          <span class="details">Description</span>
+          <textarea placeholder="Describe" name="Description{{j}}"  [(ngModel)]="i.jobdes" required></textarea>
+        </div>
+      </div>
 
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="email">Organization Name</label>
-  <div class="controls">
-    <input id="organisation"  placeholder="Enter Your Organisation name" class="input-xlarge" type="text" name="name{{j}}"  [(ngModel)]="i.companyname">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="ex-year">Experience in Year</label>
-  <div class="controls">
-    <input id="exp-year"  placeholder="Enter Your Experience in Year" class="input-xlarge" type="text" name="jobyear{{j}}"  [(ngModel)]="i.jobyear">
-    
-  </div>
-</div>
-
-
-
-<!-- Textarea -->
-<div class="control-group">
-  <label class="control-label" for="Description">Job Description</label>
-  <div class="controls">                     
-    <textarea id="Address" name="Description{{j}}"  [(ngModel)]="i.jobdes">Description</textarea>
-    <button class="btn btn-danger" type="button" (click)="del(i)">Remove</button>
-  </div>
-</div>
-</div>
-<div class="control-group">
-  <label class="control-label" for="submit"></label>
-  <div class="controls">
-    <button id="submit" name="submit" class="btn btn-primary" type="button" (click)="insert()">ADD</button>
-  </div>
-</div>
-
-
-
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="submit"></label>
-  <div class="controls">
-    <button id="submit" name="submit" class="btn btn-primary" type="submit">Next</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-	</div>
-</div>
-
-
-
-
+          <div class="buttoner">
+            <input type="button" value="Delete" (click)="del(i)"> 
+         </div>
+             
+                     
+          </div>
+       
+          <div class="buttoned">
+            <input type="button" value="Add" (click)="insert()"> 
+           </div>
+       
+          <div class="button">
+            <input type="submit" value="Next Page"> 
+          </div>
+        
+        </form>
+      </div>
+    </div>
+  
+  

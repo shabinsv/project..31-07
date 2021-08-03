@@ -53,11 +53,18 @@ export class Form4Component implements OnInit {
     this.http.Resumedata.languages.push({language:""});
   }
   del(i){
-    this.http.Resumedata.skills.splice(i, 1); 
+    const index: number = this.http.Resumedata.skills.indexOf(i);
+    if (index !== -1) {
+        this.http.Resumedata.skills.splice(index, 1);
+    }        
+    
   }
   del2(i){
-    this.http.Resumedata.languages.splice(i, 1); 
+    const index: number = this.http.Resumedata.languages.indexOf(i);
+    if (index !== -1) {
+        this.http.Resumedata.languages.splice(index, 1);
+    }    
+   
   }
-
 
 }

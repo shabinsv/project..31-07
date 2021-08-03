@@ -1,94 +1,48 @@
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <div class="container">
-	<div class="row">
-        <form class="form-horizontal" (ngSubmit)="resumedata1()">	
-<fieldset>
-
-<!-- Form Name -->
-<legend>::: Personal Details></legend>
-
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="full_name">Full Name</label>
-  <div class="controls">
-    <input id="full_name" name="full_name" placeholder="Enter your full name" class="input-xlarge" type="text" [(ngModel)]="http.Resumedata.name">
-   
+  <div class="title">Personal Information</div>
+  <div class="content">
+    <form action="#" (ngSubmit)="resumedata1()">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Full Name</span>
+          <input type="text"name="full_name" placeholder="Enter your name" [(ngModel)]="http.Resumedata.name"required>
+        </div>
+        
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="Enter your email" name="email" [(ngModel)]="http.Resumedata.email" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Mobile Number</span>
+          <input type="number"name="mobile" placeholder="Enter your  Mobile number" [(ngModel)]="http.Resumedata.phonenumber" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Birthday</span>
+          <input type="date" id="birthday" placeholder="YYYY-MM-DD"name="dob" [(ngModel)]="http.Resumedata.dob">
+        </div>
+        <div class="input-box">
+          <span class="details">Address</span>
+          <input type="text" placeholder="Enter your Address" name="address"  [(ngModel)]="http.Resumedata.address"required>
+        </div>
+        <div class="input-box">
+          <span class="details">About you</span>
+          <input type="text" placeholder="Enter About you" name="about"  [(ngModel)]="http.Resumedata.about"required>
+        </div>
+      </div>
+      <div class="gender-details">
+        <!-- <div class="category"> -->
+        <label  for="choose">Choose Gender</label>
+<select placeholder="Degree" name="degree" [(ngModel)]="http.Resumedata.gender">
+  <option class="gender">Male</option>
+  <option>Female</option>
+    </select>
+       
+          
+      </div>
+      <div class="button">
+        
+        <input type="submit" value="Next Page"> 
+      </div>
+    </form>
   </div>
-</div>
-
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="email">Email</label>
-  <div class="controls">
-    <input id="email" name="email" placeholder="Enter Your Email." class="input-xlarge" type="text"  [(ngModel)]="http.Resumedata.email">
-   
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="mobile">Mobile No.</label>
-  <div class="controls">
-    <input id="mobile" name="mobile" placeholder="Enter Your Mobile Number" class="input-xlarge" type="number"  [(ngModel)]="http.Resumedata.phonenumber">
- 
-  </div>
-</div>
-
-<!-- Appended Input-->
-<div class="control-group">
-  <label class="control-label" for="dob">Date of Birth</label>
-  <div class="controls">
-    <div class="input-append">
-      <input id="dob" name="dob" class="input-large" placeholder="YYYY-MM-DD" type="date"  [(ngModel)]="http.Resumedata.dob">
-      <span class="add-on">DOB</span>
-    </div>
- 
-  </div>
-</div>
-
-<!-- Multiple Radios (inline) -->
-<div class="control-group">
-  <label class="control-label" for="choose">Choose A Degree</label>
-  <select class="control-label" placeholder="Degree" name="degree" [(ngModel)]="http.Resumedata.gender">
-    <option>Male</option>
-    <option>Female</option>
-    
-  </select>
-    </div>
-
-
-<!-- Textarea -->
-<div class="control-group">
-  <label class="control-label" for="Address">Address</label>
-  <div class="controls"> 
-                     
-    <textarea id="Address" name="Address" placeholder="Address" [(ngModel)]="http.Resumedata.address">Address</textarea>
-    
-  </div>
-</div>
-<!-- Textarea -->
-<div class="control-group">
-  <label class="control-label" for="Address">About You</label>
-  <div class="controls">                     
-    <textarea id="Address" placeholder="About" name="about" [(ngModel)]="http.Resumedata.about">About</textarea>
-  </div>
-</div>
-
-
-
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="submit"></label>
-  <div class="controls">
-    <button id="submit" name="submit" type="submit" class="btn btn-primary">Next</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-	</div>
 </div>

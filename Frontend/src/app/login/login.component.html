@@ -1,20 +1,68 @@
-<div class="login-form">    
-    <form action="/examples/actions/confirmation.php" (ngSubmit)="loginUser()" #userLogin="ngForm">
-		<div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
-    	<h4 class="modal-title">Login to Your Account</h4>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email" name="email" required="required"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" [(ngModel)]="user.username">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="pass"  [(ngModel)]="user.password" required minlength="8">
-        </div>
-        
-        <div class="form-group small clearfix">
-            <label class="form-check-label"><input type="checkbox"> Remember me</label>
-            <a href="#" class="forgot-link">Forgot Password?</a>
-        </div> 
-        <input type="submit"  [disabled]="userLogin.form.invalid" class="btn btn-primary btn-block btn-lg" value="Login">              
-    </form>			
-    <div class="text-center small">Don't have an account? <a routerLink="/signup">Sign up</a></div>
-</div>
 
+<section class="login-block">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 login-sec">
+            <h2 class="text-center">Login Now</h2>
+            <form class="login-form" (ngSubmit)="loginUser()" #userLogin="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">Email</label>
+    <input type="text" class="form-control" placeholder="enter valid Email" name="email" required="required"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" [(ngModel)]="user.username">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+    <input type="password" class="form-control" placeholder="enter Password" name="pass"  [(ngModel)]="user.password" required minlength="8">
+  </div>
+  
+  
+    <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      <small>Remember Me</small>
+    </label>
+    <button type="submit"  [disabled]="userLogin.form.invalid"  class="btn btn-login float-right">Submit</button>
+  </div>
+  
+</form>
+        </div>
+        <div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+            <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Welcome Back</h2>
+            <p><b>Use the form to Log in to our website if you have an account</b></p>
+        </div>	
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Welcome Back</h2>
+            <p><b>Use the form to Log in to our website if you have an account</b></p>
+        </div>	
+    </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="https://images.pexels.com/photos/5989943/pexels-photo-5989943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            <h2>Welcome Back</h2>
+            <p><b>Use the form to Log in to our website if you have an account</b></p>
+        </div>	
+    </div>
+  </div>
+            </div>	   
+            
+        </div>
+    </div>
+</div>

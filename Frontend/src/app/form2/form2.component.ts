@@ -19,6 +19,10 @@ constructor(public http:FormService,private router:Router) { }
    this.http.Resumedata.education.push({degree:"",specialisation:"",year: "",name:""});
   }
   del(i){
-    this.http.Resumedata.education.splice(i, 1); 
+    const index: number = this.http.Resumedata.education.indexOf(i);
+    if (index !== -1) {
+        this.http.Resumedata.education.splice(index, 1);
+    }    
+    //this.http.Resumedata.education.splice(i, 1); 
   }
 }

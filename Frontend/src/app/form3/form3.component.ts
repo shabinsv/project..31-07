@@ -21,7 +21,11 @@ export class Form3Component implements OnInit {
     this.http.Resumedata.job.push({jobname:"", companyname:"", jobyear:"",jobdes:""});
   }
   del(i){
-    this.http.Resumedata.job.splice(i, 1); 
+    const index: number = this.http.Resumedata.job.indexOf(i);
+    if (index !== -1) {
+        this.http.Resumedata.job.splice(index, 1);
+    }    
+    //this.http.Resumedata.job.splice(i, 1); 
   }
 
 }

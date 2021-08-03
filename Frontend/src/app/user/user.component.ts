@@ -12,21 +12,18 @@ import Swal from 'sweetalert2'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  sideBarOpen = true;
   ID2=localStorage.getItem("UserId");
 
   constructor(private router:Router,public form:FormService,public check:UserService) { }
 
   ngOnInit(): void {
   }
-  create(){
-     this.router.navigate(['user/form1']);
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
-  update(){
-    this.router.navigate(['user/updateform1']);
-  }
-  updatephoto(){
-    this.router.navigate(['user/form5']);
-  }
+
+ 
   delete(){
     Swal.fire({
       title: 'Do you want to Save the Resume?',
@@ -72,9 +69,7 @@ export class UserComponent implements OnInit {
       }
     })
 }
-  home(){
-    this.router.navigate(['user']);
-  }
+
   
 
 }

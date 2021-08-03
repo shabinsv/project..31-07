@@ -55,4 +55,7 @@ export class UserService {
   getmessage(){
     return this.http.get("http://localhost:3000/getmessage");
   }
+  messageback(mess:any){
+    return this.http.post("http://localhost:3000/messageback",mess);
+  }
 }
