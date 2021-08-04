@@ -271,15 +271,15 @@ app.delete("/deletedata/:id",verifyToken,(req,res)=>{
   });
 });
 
-app.get("/getlink/:id/:cvid",verifyToken,function(req,res){
-  console.log("ss");
-  var id = req.params.id; 
-  var cvid = req.params.cvid;
-  console.log(id);
-  console.log(cvid);
+app.post("/getlink",verifyToken,function(req,res){
+  console.log(req.body);
+  var id = req.body.accountid; 
+  var cvid = req.body.id;
+  var temp=req.body.temp;
+  
  Userdata.findById({"_id":id})
   .then((data)=>{
-       var link=`http://localhost:4200/template1/${cvid}`
+       var link=`http://localhost:4200/${temp}/${cvid}`
     var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

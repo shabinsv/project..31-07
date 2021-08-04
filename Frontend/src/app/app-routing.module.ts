@@ -32,7 +32,7 @@ import { UsermanagerComponent } from './usermanager/usermanager.component';
 
 
 
-const routes: Routes = [{path:'admin',component:AdminComponent,
+const routes: Routes = [{path:'admin',canActivate:[AuthGuard],component:AdminComponent,
 children:[{path:'',component:AdminHomeComponent},
 {path:'Home',component:AdminHomeComponent},
 {path:'manage-resumes',component:ResumemangerComponent},

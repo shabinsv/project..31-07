@@ -67,7 +67,7 @@ a.dis{
   }
 .option{
     font-family: 'Poppins',sans-serif;
-    margin-left: 6%;
+    margin-left: 4%;
     width: 350px;
     height: 30px;
     border-radius: 4px;
@@ -77,3 +77,25 @@ a.dis{
     font-family: 'Poppins',sans-serif;
 
 }
+#mess{
+    min-height: 29px ;
+    font-family: 'Poppins',sans-serif ;
+    text-align: center;
+}
+.rating-list li {
+    float: right;
+    color: #ddd;
+    
+    padding: 10px 7px;
+  
+  }
+  
+  .rating-list li:hover,
+  .rating-list li:hover ~ li, .rating-list li.selected {
+    color: #ffd700;
+  }
+  
+  .rating-list {
+    display: inline-block;
+    list-style: none;
+  }

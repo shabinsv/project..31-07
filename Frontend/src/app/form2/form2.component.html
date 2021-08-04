@@ -7,7 +7,7 @@
       <div *ngFor="let i of http.Resumedata.education;let j=index">
         <div class="user-details">
           <div class="input-box">
-            <label   class="details" for="choose">Choose Degree</label>
+            <span class="details">Choose Degree</span>
          <select  placeholder="Degree" name="degree{{j}}" [(ngModel)]="i.degree">
            <option>Bachelor’s Degree</option>
            <option>Master’s Degree</option>
@@ -43,43 +43,12 @@
            </div>
        
           <div class="button">
+            
             <input type="submit" value="Next Page"> 
+            <a routerLink="/user/form1"><input type="button" value="Back Page"></a>
           </div>
         
         </form>
       </div>
     </div>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-

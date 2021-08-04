@@ -32,6 +32,6 @@ export class TemplateService {
   }
 
   getlink(id:any){
-    return this.http.get(`http://localhost:3000/getlink/${this.ID2}/`+id);
+    return this.http.post("http://localhost:3000/getlink",id);
   }
 }

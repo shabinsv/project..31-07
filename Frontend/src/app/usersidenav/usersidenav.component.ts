@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, destroyPlatform, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from '../form.service';
 import { UserService } from '../user.service';
@@ -15,6 +15,13 @@ export class UsersidenavComponent implements OnInit {
   ID2=localStorage.getItem("UserId");
   draft:any="";
   draftID:any="";
+
+  stars: number[] = [1, 2, 3, 4, 5];
+  selectedValue: number;
+  starvalue={
+    value:'',
+    ID:localStorage.getItem("UserId")
+  }
 
   constructor(private router:Router,public form:FormService,public check:UserService,config: NgbModalConfig, private modalService: NgbModal) { 
     config.backdrop = 'static';
@@ -60,6 +67,7 @@ export class UsersidenavComponent implements OnInit {
         console.log('I was closed by the timer')
       }
     })
+    
         this.form.changeuserdata(this.draftID).subscribe((data)=>{
           this.check.check(this.ID2);
           this.check.LoggedIn();
@@ -116,6 +124,14 @@ export class UsersidenavComponent implements OnInit {
               
       }
     })
+}
+countStar(star) {
+  this.selectedValue = star;
+  this.starvalue.value=star;
+  console.log('Value of star', star);
+  this.check.rate(this.starvalue);
+  document.getElementById('mess').innerHTML='Thank you for Rating us..';
+  
 }
 
 }

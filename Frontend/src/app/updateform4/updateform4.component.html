@@ -1,69 +1,74 @@
 <div class="container">
-  <div class="title">Skill Set</div>
-  
+  <div class="title">Skill Set/Language</div>
+  <br>
   <div class="content">
     <form action="#" (ngSubmit)="updatedata4()">
-          
-        
-      <div class="user-details">
-           
-        <div class="input-box">
-         <span class="details">Skill</span>
-         <div *ngFor="let i of http.Updatedata.skills;let j=index"> 
-         <input type="text"  placeholder="Enter your skill" name="skill{{j}}"  [(ngModel)]="i.skill" required>
-       
-         <div class="buttoner">
-         <input type="button" value="Delete" (click)="del(i)"> 
+      
+      <div class="row">
+     
+        <div class="col-lg">                 
+          <div  *ngFor="let i of http.Updatedata.skills;let j=index">
+            <div class="user-details">
+            <div class="input-box">
+            <span class="details">Skills</span>
+            <input type="text"  placeholder="Enter your skill" name="skill{{j}}"  [(ngModel)]="i.skill" required>
           </div>
-       </div>  
-       <div class="buttoned">
-         <input type="button" value="Add" (click)="insert()"> 
-        </div>         
-     </div>
       </div>
-     <div class="user-details">
-           
-      <div class="input-box">
-       <span class="details"> Language Skill</span>
-       <div *ngFor="let i of http.Updatedata.languages;let j=index"> 
-       <input type="text"  placeholder="Enter your Language" name="lang{{j}}"  [(ngModel)]="i.language" required>
-     
-     <div class="buttoner">
-       <input type="button" value="Delete" (click)="del2(i)"> 
-        </div>
-     </div>  
-     <div class="buttoned">
-       <input type="button" value="Add" (click)="insert2()"> 
-      </div>         
-   </div>
-                          
 
-     
+          <div class="buttoner">
+            <input type="button" value="Delete" (click)="del(i)"> 
+         </div>
+         </div>
         
+         <div class="buttoned">
+          <input type="button" value="Add" (click)="insert()"> 
+         </div>
+        </div>
+        <div class="col-lg">
+         <div class="ss">
           
-          </div>
-          <div class="title">Other Details</div>
+         <div *ngFor="let i of http.Updatedata.languages;let j=index">
+          <div class="user-details">
+                               
+             
+             <div class="input-box">
+              <span class="details"> Language</span>
+              <input type="text"  placeholder="Enter your Language" name="languages{{j}}"  [(ngModel)]="i.language" required>
+            </div>
+        </div>
+  
+            <div class="buttoner">
+              <input type="button" value="Delete" (click)="del2(i)"> 
+           </div>
+               
+                       
+            </div>
+       
+          <div class="buttoned">
+            <input type="button" value="Add" (click)="insert2()"> 
+           </div>
+
+         </div>
+        </div>
+      </div>
+
+      <div class="row inp">
+        <div class="title">Other Details</div>
           <div class="user-details">
            
             <div class="input-box">
              
              <span class="details">Achievements</span>
-             <input type="text" name="full_name" placeholder="Enter your Achievements" [(ngModel)]="http.Updatedata.achievements"required>
+             <input type="text" name="achievements" placeholder="Enter your Achievements" [(ngModel)]="http.Updatedata.achievements"required>
            
                   
          </div>
           </div>
-         
-           
-
-           
-            
-           
-           
+      </div>
+       
           <div class="button">
-            <div><input type="submit" value="Next Page"></div>
-            <div><input type="button" value="Back Page" ><a routerLink="form3"></a></div> 
-            
+            <input type="submit" value="Update"> 
+            <a routerLink="/user/updateform3"><input type="button" value="Back Page"></a>
           </div>
         
         </form>
