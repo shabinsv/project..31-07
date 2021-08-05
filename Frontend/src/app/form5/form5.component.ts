@@ -38,10 +38,19 @@ export class Form5Component implements OnInit {
   }
 
   resumedata5(){
-    this.router.navigate(['user']);
+    this.router.navigate(['user/form5']);
   }
   uploadvideo(){
     this.http.uploadvideo(this.video);
+    Swal.fire({
+      icon: 'success',
+      title: 'Url Added',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    setTimeout(() => {
+      this.router.navigate(['user/select-template']);
+    }, 1500);
   }
   
 
