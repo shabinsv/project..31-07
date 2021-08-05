@@ -157,4 +157,21 @@ div {
 	width: 1200px;
 	z-index: 1;
   }
+
+  .video{
+	height: 27px;
+	width: 277px;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-left: -90px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+  }
+  .video:focus,
+  .video:valid{
+	border-color: #9b59b6;
+  }
   

@@ -102,7 +102,7 @@ export class UsersidenavComponent implements OnInit {
       this.check.LoggedIn();
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1501);
       this.router.navigate(['user']);
     })
       } else if (result.isDenied) {

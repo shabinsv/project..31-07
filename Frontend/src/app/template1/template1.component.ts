@@ -5,6 +5,7 @@ import vfs_fonts from 'pdfmake/build/vfs_fonts';
 import  jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-template1',
@@ -23,6 +24,7 @@ export class Template1Component implements OnInit {
     address:"",
     about:"",
     photo:"",
+    video:"",
     education:[{degree:"",specialisation:"",year: "",name:""}],
     job:[{jobname:"", companyname:"", jobyear:"",jobdes:""}],
     skills:[{skill:""}],
@@ -30,7 +32,10 @@ export class Template1Component implements OnInit {
     languages:[{language:""}]
     }
 
-  constructor(public http:TemplateService,private router: ActivatedRoute) { }
+  constructor(public http:TemplateService,private router: ActivatedRoute,config: NgbModalConfig, private modalService: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+   }
 
   ngOnInit(): void {
     this.router.params.subscribe(params => {
@@ -58,6 +63,10 @@ export class Template1Component implements OnInit {
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)  
     pdf.save('MYPdf.pdf'); // Generated PDF   
   });
+}
+open(content) {
+  
+  this.modalService.open(content, { centered: true });
 }
 
 }

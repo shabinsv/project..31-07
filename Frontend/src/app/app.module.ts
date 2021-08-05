@@ -52,6 +52,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersidenavComponent } from './usersidenav/usersidenav.component';
 import { UserheaderComponent } from './userheader/userheader.component';
 import { UserhomeComponent } from './userhome/userhome.component';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 
 
@@ -92,6 +93,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
     UserhomeComponent
   ],
   imports: [
+    YouTubePlayerModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -106,6 +108,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
     MatListModule,
     MatMenuModule,
     NgbModule
+   
   ],
   providers: [UserService,TemplateService,FormService,AuthService,{
     provide: HTTP_INTERCEPTORS,

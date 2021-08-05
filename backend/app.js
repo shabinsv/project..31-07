@@ -205,6 +205,7 @@ app.post("/form1",verifyToken,function(req,res){
     address:req.body.address,
     about:req.body.about,
     photo:req.body.photo,
+    video:req.body.video,
     education:req.body.education,
     job:req.body.job,
     skills:req.body.skills,
@@ -476,6 +477,21 @@ app.get("/getmessage",function(req,res){
       console.log(info);
  });
  });
+
+ app.put('/uploadvideo',verifyToken,(req,res)=>{
+  console.log(req.body);
+  var Url=req.body.Url;
+    var vid_id = Url.split("v=")[1].substring(0, 11);
+    var ID=req.body.ID;
+  
+ Resumedata.findOneAndUpdate({"ID":ID},
+                              {$set:{"video": vid_id 
+                                
+                          }})
+ .then(function(){
+     res.send();
+ });
+});
 
 
 

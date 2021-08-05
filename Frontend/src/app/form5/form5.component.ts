@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from '../form.service';
 import { UserService } from '../user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form5',
@@ -10,7 +11,10 @@ import { UserService } from '../user.service';
 })
 export class Form5Component implements OnInit {
  
-  
+  video={
+    ID:localStorage.getItem("UserId"),
+    Url:''
+  }
   selectedimage:any =null;
   constructor(public http:FormService,private router:Router,private form:UserService) { }
 
@@ -24,12 +28,20 @@ export class Form5Component implements OnInit {
    const fd= new FormData;
    fd.append('image',this.selectedimage,this.selectedimage.name);
    this.http.image(fd);
-   console.log("Photo Uploaded")
+   Swal.fire({
+    icon: 'success',
+    title: 'Photo Uploded',
+    showConfirmButton: false,
+    timer: 1500
+  })
    
-   }
+  }
 
   resumedata5(){
     this.router.navigate(['user']);
+  }
+  uploadvideo(){
+    this.http.uploadvideo(this.video);
   }
   
 

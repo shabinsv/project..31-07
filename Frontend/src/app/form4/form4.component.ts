@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormService } from '../form.service';
 import { Form5Component } from '../form5/form5.component';
 import { UserService } from '../user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form4',
@@ -21,6 +22,7 @@ export class Form4Component implements OnInit {
     address:"",
     about:"",
     photo:"",
+    video:"",
     education:[{degree:"",specialisation:"",year: "",name:""}],
     job:[{jobname:"", companyname:"", jobyear:"",jobdes:""}],
     skills:[{skill:""}],
@@ -37,7 +39,12 @@ export class Form4Component implements OnInit {
       this.http.Resumedata= this.Resume;
       console.log(this.http.Resumedata);
     })
-    alert("Sucessfully Created");
+    Swal.fire({
+      icon: 'success',
+      title: 'Created',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.form.check(this.ID2);
     this.form.LoggedIn();
     this.router.navigate(['user/form5']);

@@ -17,6 +17,7 @@ export class FormService {
     address:"",
     about:"",
     photo:"",
+    video:"",
     education:[{degree:"",specialisation:"",year: "",name:""}],
     job:[{jobname:"", companyname:"", jobyear:"",jobdes:""}],
     skills:[{skill:""}],
@@ -35,6 +36,7 @@ export class FormService {
       address:"",
       about:"",
       photo:"",
+      video:"",
       education:[{degree:"",specialisation:"",year: "",name:""}],
       job:[{jobname:"", companyname:"", jobyear:"",jobdes:""}],
       skills:[{skill:""}],
@@ -75,5 +77,9 @@ export class FormService {
   }
   changeuserdata(id:any){
     return this.http.get("http://localhost:3000/changeuserdata/"+id);
+  }
+  uploadvideo(data:any){
+    return this.http.put("http://localhost:3000/uploadvideo",data)
+    .subscribe(data =>{console.log(data)});
   }
 }

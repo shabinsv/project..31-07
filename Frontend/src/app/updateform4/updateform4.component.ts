@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from '../form.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-updateform4',
@@ -16,8 +17,13 @@ export class Updateform4Component implements OnInit {
 
   updatedata4(){
     this.http.updatedata(this.http.Updatedata);
-    alert("Sucessfully Updated");
-    this.router.navigate(['user']);
+    Swal.fire({
+      icon: 'success',
+      title: 'Resume updated',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['user/select-template']);
   
    
   }

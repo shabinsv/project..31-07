@@ -1,6 +1,8 @@
 .register-photo {
 	background: linear-gradient(to bottom, #FFB88C, #DE6262);
     padding: 40px ;
+  
+  
 	
 	
 	
@@ -95,7 +97,9 @@
     text-decoration: none
 } 
 .smal{
-	font-size:7.38px;
+    margin-top: -23px;
+   position: fixed;
+	font-size:9px;
 	color: red;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 

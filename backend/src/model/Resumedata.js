@@ -12,6 +12,7 @@ const ResumeSchema=new Schema({
     address:String,
     about:String,
     photo:String,
+    video:String,
     education:Array,
     job:Array,
     skills:Array,
