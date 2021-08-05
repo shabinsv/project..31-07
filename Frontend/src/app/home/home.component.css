@@ -1,8 +1,10 @@
+
 .u-image-1{
   background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("src/assets/images/tytyyty-min1.jpg");
   background-position: 50% 50%;
 }
 .u-section-1 {
+  
   background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("src/assets/images/b151a959194b5ae3733482cbaef6fa8f3ea354798abf2cfe89b18bab2d04cb4c92c7297e78a64cc2c75bf067c972d06589e03bd510274f4e141fb7_1280.jpg");
   background-position: 50% 50%;
 }

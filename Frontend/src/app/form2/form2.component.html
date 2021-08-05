@@ -2,32 +2,34 @@
   <div class="title">Education Details</div>
   <br>
   <div class="content">
-    <form action="#" (ngSubmit)="resumedata2()">
+    <form action="#" (ngSubmit)="resumedata2()" #createform="ngForm">
       
       <div *ngFor="let i of http.Resumedata.education;let j=index">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Choose Degree</span>
-         <select  placeholder="Degree" name="degree{{j}}" [(ngModel)]="i.degree">
+         <select required="required"  placeholder="Degree" name="degree{{j}}" [(ngModel)]="i.degree">
            <option>Bachelor’s Degree</option>
            <option>Master’s Degree</option>
            <option>Doctoral Degree</option>
+           <option>Plus Two </option>
+           <option>Tenth</option>
          </select>
                     
            </div>
            <div class="input-box">
             <span class="details">Specialisation</span>
-            <input type="text" name="mobile{{j}}" placeholder="Enter your Specialisation" [(ngModel)]="i.specialisation"required>
+            <input required="required" type="text" name="mobile{{j}}" placeholder="Enter your Specialisation" [(ngModel)]="i.specialisation"required>
           </div>
 
           <div class="input-box">
             <span class="details">Passout Year</span>
-            <input type="number" name="yaer{{j}}" placeholder="Enter your Passout Year" [(ngModel)]="i.year" required>
+            <input required="required" type="number" name="yaer{{j}}" placeholder="Enter your Passout Year" [(ngModel)]="i.year" required>
           </div>
 
           <div class="input-box">
             <span class="details">Institution Name</span>
-            <input type="text"name="mobile" placeholder="Enter your Institution" [(ngModel)]="i.name"  name="name{{j}}" required>
+            <input required="required" type="text"name="mobile" placeholder="Enter your Institution" [(ngModel)]="i.name"  name="name{{j}}" required>
           </div>
         </div>
 
@@ -44,7 +46,7 @@
        
           <div class="button">
             
-            <input type="submit" value="Next Page"> 
+            <input [disabled]="createform.form.invalid" type="submit" value="Next Page"> 
             <a routerLink="/user/form1"><input type="button" value="Back Page"></a>
           </div>
         

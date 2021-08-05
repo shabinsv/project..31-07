@@ -122,8 +122,11 @@ form .input-box span.details{
    background: linear-gradient(135deg, #1d76b1, #c2c2c7);
  }
  form .button input:hover{
-  transform: scale(0.99);
+  
   background: linear-gradient(-135deg, #c2c2c7,#1d76b1);
+  }
+  form .button input:disabled{
+    background: rgb(190, 188, 188);
   }
  @media(max-width: 584px){
  .container{
