@@ -103,6 +103,7 @@
 }
 
 .policy-image{
+  
   width: 100%;
   height: 300px;
   overflow: hidden;
@@ -164,6 +165,32 @@
 
 .read-more:hover i{
   margin-left: 6px;
+}
+
+.button {
+  position: absolute;
+ 
+  left: 13.5%;
+  top: 45%;
+  text-align: center;
+  opacity: 1;
+  transition: opacity .35s ease;
+}
+
+.button a {
+  text-decoration: none;
+  padding: 8px 40px;
+  text-align: center;
+  color: black;
+  font-weight: 700;
+  border: solid 2px white;
+  z-index: 1;
+  border-radius: 4px;
+}
+.button a:hover{
+  color: white;
+  border: solid 2px rgb(128, 126, 126);
+  background: rgb(128, 126, 126);
 }
 
   

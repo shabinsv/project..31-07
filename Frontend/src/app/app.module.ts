@@ -53,6 +53,7 @@ import { UsersidenavComponent } from './usersidenav/usersidenav.component';
 import { UserheaderComponent } from './userheader/userheader.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -90,7 +91,8 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     UsermanagerComponent,
     UsersidenavComponent,
     UserheaderComponent,
-    UserhomeComponent
+    UserhomeComponent,
+    FooterComponent
   ],
   imports: [
     YouTubePlayerModule,
