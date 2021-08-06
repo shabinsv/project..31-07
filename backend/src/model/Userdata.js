@@ -9,6 +9,6 @@ const UserSchema=new Schema({
     phonenumber:Number,
     star:String
 })
-var Userdata=mongoose.model("userdata",UserSchema);
+var Userdata=mongoose.model("userdata2",UserSchema);
 
 module.exports=Userdata;
