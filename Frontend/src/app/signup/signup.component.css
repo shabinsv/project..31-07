@@ -97,8 +97,8 @@
     text-decoration: none
 } 
 .smal{
-     position: fixed;
-	font-size:9px;
+     position: relative;
+	font-size:7.3px;
 	color: red;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
