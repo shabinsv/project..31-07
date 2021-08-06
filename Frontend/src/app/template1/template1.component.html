@@ -170,11 +170,11 @@
 
 
 
-<div>
+<div style="padding-bottom: 10px;">
     <button class='btn send' type="button" (click)="generatePdf()"><i class="fa fa-download"></i>Download</button>
-<button type="button" class="tempbutton" (click)="open(content)">my Video</button>
+<button style="float: right;" class='btn send' type="button"(click)="open(content)"><i class="fa fa-video"></i>my Video</button>
 </div>
-<button class='btn send'>Send</button>
+
 
 <div class="modal">
     <ng-template #content let-c="close" let-d="dismiss" >

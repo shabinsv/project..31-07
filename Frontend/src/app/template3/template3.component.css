@@ -195,4 +195,31 @@
     font-size: 1.25em;
     margin-left:5px;
   }
+  .btn{
+    padding: 5px 10px;
+    background: inherit;
+    border: 1px solid #5CC4C0;
+    color: #5CC4C0;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-family: 'Montserrat' sans-serif;
+    transition: all .5s linear;
+  }
+    .btn:hover{
+      color: white;
+      background: #5CC4C0;
+    }
+      
+  .fa{
+    margin-right: 20px;
+   
+  
+  @-webkit-keyframes spinning
+    from
+      -webkit-transform: rotate(0deg)
+    to
+      -webkit-transform: rotate(360deg)
+  }
   

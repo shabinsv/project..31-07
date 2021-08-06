@@ -45,7 +45,7 @@ export class Template3Component implements OnInit {
   public generatePdf()  
  
     { 
-      alert("s"); 
+    
       var data = document.getElementById('makepdf');  
     html2canvas(data ,{scrollY: -window.scrollY}).then(canvas => {  
       // Few necessary setting options  

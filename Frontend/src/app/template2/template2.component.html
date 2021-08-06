@@ -96,9 +96,10 @@
     </div>
   </main>
 </div>
-<button type="button" (click)="generatePdf()">Download</button>
-<button type="button" class="btn btn-outline-warning" (click)="open(content)">my Video</button>
-
+<div style="padding-bottom: 10px;">
+  <button class='btn send' type="button" (click)="generatePdf()"><i class="fa fa-download"></i>Download</button>
+<button style="float: right;" class='btn send' type="button"(click)="open(content)"><i class="fa fa-video"></i>my Video</button>
+</div>
 <div class="modal">
     <ng-template #content let-c="close" let-d="dismiss" >
     
